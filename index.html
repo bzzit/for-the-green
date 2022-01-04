@@ -22,9 +22,9 @@
      secs = Math.floor(diff / 1000);
 
      d = days;
-     h = hours;
-     m = mins;
-     s = secs;
+     h = hours - 24 * days;
+     m = mins - 60 * hours;
+     s = secs - 60 * secs;
 
      document.getElementById("timer")
       .innerHTML =
