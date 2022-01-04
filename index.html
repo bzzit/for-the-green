@@ -16,15 +16,15 @@
      now = new Date();
      diff = now - future;
 
-     days = Math.floor(diff / (1000 * 60 * 60 * 24));
-     hours = Math.floor(diff / (1000 * 60 * 60));
-     mins = Math.floor(diff / (1000 * 60));
-     secs = Math.floor(diff / 1000);
+     days = Math.ceil(diff / (1000 * 60 * 60 * 24));
+     hours = Math.ceil(diff / (1000 * 60 * 60));
+     mins = Math.ceil(diff / (1000 * 60));
+     secs = Math.ceil(diff / 1000);
 
      d = days;
-     h = hours - 24 * days;
-     m = mins - 60 * hours;
-     s = secs - 60 * secs;
+     h = hours % 24;
+     m = mins % 60;
+     s = secs % 60;
 
      document.getElementById("timer")
       .innerHTML =
